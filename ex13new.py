@@ -2,7 +2,7 @@
 lst = list(map(int, input("Enter the integer/elements:").strip().split()))
 
 print(lst)
-print(range(len(lst)))
+
 def is_sorted(lst):
 	is_increasing = True
 	if lst[0] > lst[1]: is_increasing = False
