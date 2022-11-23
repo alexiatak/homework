@@ -5,8 +5,6 @@ class FunctionCaller:
 	@classmethod
 	def append_job(cls,exercise):
 		cls.liist.append(exercise)
-		#self.append_job=fun.append(exercise)
-		#return cls(exercise)
 		
 	@classmethod
 	def call(cls):
