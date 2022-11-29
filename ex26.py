@@ -10,8 +10,8 @@ class FunctionCaller:
 	def call(self):
 		if len(self.liist) != 0 :
 			for i in range(len(self.liist)):
-				res(i) == self.fun(self.liist(i))
-				print (f"Calling for job {self.liist(i)} . RESULT" ,res(i))
+				res = self.fun(self.liist[i])
+				print (f"Calling for job {self.liist[i]} . RESULT" ,res)
 			self.liist.clear()
 		else:
 			print("nothing to do")
