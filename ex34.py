@@ -11,5 +11,6 @@ args=parser.parse_args()
 
 urllink=f'http://worldtimeapi.org/api/timezone/{args.region}/{args.city}'
 request_url = urllib.request.urlopen(urllink)
+res=request_url.read().split(b',')[2].decode('utf-8')
 print(f'The exact time for {args.city} in {args.region} is :')
-print(request_url.read())
+print(res)
