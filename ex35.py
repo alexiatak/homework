@@ -15,9 +15,9 @@ def scanner(adress):
 		timee=datetime.datetime.now()
 		
 		if dir_before != dir_after :
-			if dir_before.difference(dir_after) != set(dir_list):
+			if dir_before.difference(dir_after) != set():
 				print (f"in { timee } , {dir_before.difference(dir_after)} was removed")
-			elif dir_after.difference(dir_before) != set(dir_list):
+			if dir_after.difference(dir_before) != set():
 				print (f"in { timee } , {dir_after.difference(dir_before)} was created")
 
 scanner(myadress)
