@@ -4,10 +4,12 @@ import time
 import urllib.request
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--region','--city',help='please give your region and city', required=True)
+parser.add_argument('region', type=str, help='Give your region')
+parser.add_argument('city', type=str, help='Give your city')
+
 args=parser.parse_args()
 
-
-request_url = urllib.request.urlopen(f'http://worldtimeapi.org/api/timezone/{args.region}/{args.city}')
+urllink=f'http://worldtimeapi.org/api/timezone/{args.region}/{args.city}'
+request_url = urllib.request.urlopen(urllink)
+print(f'The exact time for {args.city} in {args.region} is :')
 print(request_url.read())
-print(f'The exact time for {args.city} in {args.region} is : {}')
