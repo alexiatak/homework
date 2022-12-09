@@ -2,12 +2,18 @@
 import shelve
 import random
 
-newlist=random.sample(range(0, 1000),100)
-print(newlist)
-open('randomlist', flag = 'c', protocol=None, writeback = False)
+def my_random_list():
+	newlist=random.sample(range(0, 1000),100)
+	
+	with shelve.open("randomlist", flag="c") as s:
+		s["list"] = newlist
+	
+def random_summ():
+	with shelve.open("randomlist", flag="c") as s:
+		liist=list(s["list"])
+		rsum=sum(liist)
+	return(rsum)
 
-s = shelve.open("randomlist")
-for i in len(newlist):
-	s[i]=newlist[i]
-print(s.values)
-s.close()
+if __name__ == "__main__":
+	my_random_list()
+	print(random_summ())
