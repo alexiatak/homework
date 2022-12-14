@@ -6,9 +6,9 @@ import random
 import time
 
 class Sender(threading.Thread):
-		def __init__(self, q, datanum, rec):
-			self.queue=q
-			self.receiver = rec
+	def __init__(self, q, datanum, rec):
+		self.queue=q
+		self.receiver = rec
 			
 			def randomlist(qq):
 				for i in range(datanum):
