@@ -9,16 +9,16 @@ class Sender(threading.Thread):
 	def __init__(self, q, datanum, rec):
 		self.queue=q
 		self.receiver = rec
-			
-			def randomlist(qq):
-				for i in range(datanum):
-					time.sleep(random.randint(0, 4))
-					values=random.randint(0,100)
-					qq.put(values,block=False)
-					print(f"GIVEN VALUE :{values}")
-					
-			super().__init__(target=randomlist, args=(self.queue, ))
-			self.receiver.sent_list(self)
+
+		def randomlist(qq):
+			for i in range(datanum):
+				time.sleep(random.randint(0, 4))
+				values=random.randint(0,100)
+				qq.put(values,block=False)
+				print(f"GIVEN VALUE :{values}")
+	
+		super().__init__(target=randomlist, args=(self.queue, ))
+		self.receiver.sent_list(self)
 
 class Receiver(threading.Thread):
 	def __init__(self, q):
