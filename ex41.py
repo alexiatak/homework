@@ -1,3 +1,4 @@
+#cores in this pc
 from multiprocessing import Process as pr
 import time
 
